@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <!-- tailwind and daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font-awsome kit -->
+    <script src="https://kit.fontawesome.com/be061c3c82.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* styles.css */
+
+        /* Inactive state */
+        .active-button {
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Active state */
+        .active-button.active {
+            color: #0cbb09;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="bg-blue-400 w-4/5 mx-auto h-[500px] py-4 mt-10">
+        <h1 class="text-5xl font-bold text-center">My Text Editor</h1>
+        <div class="mt-5 w-3/4 mx-auto h-4/5 border border-black bg-blue-200">
+            <div class="flex flex-row justify-between px-4 py-3 my-4 mx-3 border-b-2 border-black">
+                <!-- left side button -->
+                <div class="flex gap-5">
+                    <button onclick="bold(this)" class="fa-solid fa-b cursor-pointer"></button>
+                    <button onclick="italic(this)" class="fa-solid fa-italic cursor-pointer"></button>
+                    <button onclick="underline(this)" class="fa-solid fa-underline cursor-pointer"></button>
+                </div>
+                <!-- mid side button -->
+                <div class="flex gap-5">
+                    <button id="left" class="fa-solid fa-align-left cursor-pointer"></button>
+                    <button id="center" class="fa-solid fa-align-center cursor-pointer active-button"></button>
+                    <button id="right" class="fa-solid fa-align-right cursor-pointer"></button>
+                    <button id="justify" class="fa-solid fa-align-justify cursor-pointer"></button>
+                </div>
+                <!-- right side button -->
+                <div class="flex flex-row items-center gap-5">
+                    <input class="w-10 h-6" value="16" type="number" name="" id="number">
+                    <p onclick="capitalize(this)" class="cursor-pointer">Aa</p>
+                    <input class="w-10" type="color" name="" id="color">
+                </div>
+            </div>
+
+
+            <!-- text Area -->
+            <div class="text-center">
+                <textarea name="" id="text-area" cols="106" rows="11" class="w-11/12 px-2 resize-none"></textarea>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/textEditor.js"></script>
+</body>
+
+</html>
